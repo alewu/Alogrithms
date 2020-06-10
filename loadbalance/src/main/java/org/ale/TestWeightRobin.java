@@ -4,7 +4,9 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TestWeightRobin {
-    //    1.map, key-ip,value-weight
+    /**
+     * map, key-ip,value-weight
+     */
     static Map<String, Integer> ipMap = new HashMap<>();
 
     static {
@@ -17,7 +19,7 @@ public class TestWeightRobin {
 
     Integer pos = 0;
 
-    public String WeightRobin() {
+    public String weightRobin() {
         Map<String, Integer> ipServerMap = new ConcurrentHashMap<>();
         ipServerMap.putAll(ipMap);
 
@@ -50,7 +52,7 @@ public class TestWeightRobin {
     public static void main(String[] args) {
         TestWeightRobin testWeightRobin = new TestWeightRobin();
         for (int i = 0; i < 10; i++) {
-            String server = testWeightRobin.WeightRobin();
+            String server = testWeightRobin.weightRobin();
             System.out.println(server);
         }
 
